@@ -1,5 +1,18 @@
 function consecutiveSubstrings(string) {
-  // type your code here
+  const collector = []
+  const start = 0
+  let end = 1
+  let newString = string
+  while (end <= newString.length) {
+    collector.push(newString.slice(start, end))
+    if (end === newString.length) {
+      // newString = newString.substring(1)
+      newString = newString.slice(1)
+      end = 0
+    }
+    end++ 
+  }
+  return collector
 }
 
 if (require.main === module) {
